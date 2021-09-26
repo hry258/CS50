@@ -1,5 +1,4 @@
 # Personal vault
-#### Video Demo: https://youtu.be/O-i1oeeBVAw
 #### Description:
 
 This project consists of a web app that lets you upload images from your device tothe server, or your "personal vault".  
