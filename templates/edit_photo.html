@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit photo
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        {% if photo %}
+            <img src={{ photo.path }} alt="{{ photo.title }}" class="profile_photo">
+            <form action="/edit" method="post" onsubmit="return validate_form()" name="Form">
+                <div class="form-group">
+                    <div style="color:#E7DFDD; font-size:25px; text-align:center; padding-bottom:10px;">Title:</div>
+                    <input type="text" name="title" value="{{ photo.title }}" autofocus autocomplete="off" class="form-control">
+                </div>
+                <div class="form-group">
+                    <div for="description" style="color:#E7DFDD; font-size:25px; text-align:center; padding-bottom:10px;">Description:</div>
+                    <textarea name="description" class="form-control" style="background-color:#E7DFDD;">{{ photo.description }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-h">Submit</button>
+            </form>
+        {% else %}
+            <div style="text-align:center; color:#E7DFDD; font-size:45px;">
+                Photo not found!
+            </div>
+        {% endif %}
+    </div>
+    
+    <script>
+        function validate_form() {
+            var title = document.forms["Form"]["title"].value;
+            
+            if (title == null || title == "") {
+                alert("You must give the photo a title!");
+                return false;
+            }
+        }
+    </script>
+{% endblock %}
+
+
+

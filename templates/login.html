@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log in
+{% endblock %}
+
+{% block main %}
+    <div class="container form">
+        <form action="/login" method="post" onsubmit="return validate_form()" name="Form">
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" autofocus autocomplete="off" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" autocomplete="off" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-h">Login</button>
+        </form>
+        
+        <div style="text-align:center; color:#E7DFDD;">
+            <br>
+            Don't have an account? Register <a href="/register">here</a>.
+        </div>
+    </div>
+    
+    <script>
+        function validate_form() {
+            var username = document.forms["Form"]["username"].value;
+            var password = document.forms["Form"]["password"].value;
+            
+            if (password == null || password == "" || username == null || username == "") {
+                alert("You must fill all the fields!");
+                return false;
+            }
+        }
+    </script>
+{% endblock %}

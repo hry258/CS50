@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <div class="container" style="color:#E7DFDD;">
+        <div class="title">
+            Profile:
+        </div>
+        <img src="static/images/avatar_stark.png" alt="Avatar" class="profile_photo img-responsive">
+        <div style="text-align:center; font-size:40px; padding-bottom:20px;">
+            Username: {{ data.username }}
+            <br>
+        </div>
+        <button type="button" class="btn btn-h">
+            <a href="/logout" style="color:black; ">Log out</a>
+        </button>
+    </div>
+{% endblock %}

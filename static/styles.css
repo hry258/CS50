@@ -1,0 +1,220 @@
+/*
+Void: #0E0A19;
+Stark: #E7DFDD;
+Fuschia: #4717F8;
+Jewel: #4717F6;
+*/
+
+body {
+    font-family: Open Sans;
+    background-color: #0E0A19;
+}
+
+.top {
+    background-color: black;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+    padding: 0;
+}
+
+.footer {
+    background-color: black;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+    left: 0;
+    bottom: 0;
+    color: #E7DFDD;
+    font-family: Open Sans;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.navbar {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 2;
+    font-size: 25px;
+}
+
+.col-lg-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+a {
+    color: #E7DFDD;
+    text-decoration: none;
+    transition: 0.3s color;
+}
+
+a:hover {
+    text-decoration: none;
+    color: gray;
+}
+
+.solid {
+  border-top: 3px solid #E7DFDD;
+  border-radius: 5px;
+  width: 75%;
+  margin-top: 0px;
+}
+
+.title {
+    color: #E7DFDD;
+    font-size: 45px;
+    text-align: center;
+    padding: 20px;
+}
+
+.content {
+    font-family: Titillium Web;
+    padding-bottom: 30px;
+    padding-top: 5px;
+}
+
+ul {
+    font-size: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    padding-bottom: 3px;
+}
+
+.logo {
+    height: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-min {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    padding-bottom: 15px;
+}
+
+@media(min-width:1200px) {
+    .center {
+        min-height: 600px;
+        width: auto;
+    }
+}
+
+.img-title {
+    text-align: center; 
+    padding: 30px; 
+    font-size: 30px;
+}
+
+.img-special {
+    background: url("/static/images/avatar_stark.png") center center no-repeat;
+    background-size: contain;
+    
+    width: auto;
+    height: 50px;
+    
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.img-special:hover {
+    background-image: url("/static/images/avatar_gray.png");
+}
+
+.form {
+    padding: 100px;
+}
+
+.btn-h {
+    background-color: #E7DFDD;
+    color: black;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 20px;
+}
+.btn-h-basic {
+    background-color: #E7DFDD;
+    color: black;
+    margin-right: 20px;
+}
+
+input[type="text"], textarea {
+    background-color: #E7DFDD;
+    color: black;
+}
+
+input[type="password"], textarea {
+    background-color: #E7DFDD;
+    color: black;
+}
+
+.form-control
+{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    
+    /* Center form controls */
+    display: inline-block;
+    
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+    font-size: 20px;
+}
+
+.form-control-file
+{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    
+    /* Center form controls */
+    display: inline-block;
+    
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+    font-size: 20px;
+}
+
+.photos {
+    max-height: 150px; 
+    width: auto; 
+    float: left; 
+    position: relative;
+    padding: 5px;
+    padding-right: 25px;
+}
+
+.description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.profile_photo {
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    padding: 50px;
+}
+
+.clone-body {
+    width: 1200px;
+    margin: 20px auto;
+    color: 4;
+}

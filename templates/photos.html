@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Photos
+{% endblock %}
+
+{% block main %}
+    <div class="container" style="color:#E7DFDD;">
+        <div class="title">
+            Photos:
+        </div>
+        {% if data %}
+            <br>
+            <br>
+            {% for photo in data %}
+                <div class="container" style="height:175px;">
+                    <img src="{{ photo.path }}" alt="{{ photo.title }}" class="photos">
+                    <div>
+                        Title: {{ photo.title }}
+                    </div>
+                    {% if photo.description %}
+                        <div class="description">
+                            Description: {{ photo.description }}
+                        </div>
+                    {% endif %}
+                    <br>
+                    <button type="button" class="btn btn-h-basic">
+                        <a href="/edit_photo/{{ photo.path|trim('static/user_photos/')|trim('{{ photo.user_id }}') }}" style="color:black;">Edit photo</a>
+                    </button>
+                    <button type="button" class="btn btn-h-basic">
+                        <a href="/delete/{{ photo.path|trim('static/user_photos/')|trim('{{ photo.user_id }}') }}" style="color:black;">Delete photo</a>
+                    </button>
+                </div>
+            {% endfor %}
+            <div style="color:white; text-align:center; padding:75px;">
+                <a href="/upload" style="font-size:25px;">Upload more.</a>
+            </div>
+        {% else %}
+            <div style="color:#E7DFDD; text-align:center;">
+                No photos uploaded. Upload <a href="/upload">here</a>.
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <style>
+        .clone-body {
+            width: 1400px;
+            margin: 20px auto;
+            columns: 4;
+            column-gap: 10px;
+            padding-top: 25px;
+        }
+        .box {
+            width: 100%;
+            margin: 0 0 20px;
+            padding: 10px;
+            background: #E7DFDD;
+            overflow: hidden;
+            break-inside: avoid;
+            font-family: 'Poppins', sans-serif;
+        }
+        img {
+            max-width: 100%;
+        }
+        h2 {
+            margin: 0;
+            padding: 10px 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        @media (max-width: 1200px) {
+            .clone-body {
+                columns: 3;
+                width: calc(100% - 40px);
+                box-sizing: border-box;
+                padding: 20px 20px 20px 0;
+            }
+        }
+        @media (max-width: 768px) {
+            .clone-body {
+                columns: 2;
+            }
+        }
+        @media (max-width: 480px) {
+            .clone-body {
+                columns: 1;
+            }
+        }
+    </style>
+
+    <div class="container clone-body">
+        {% if data %}
+            {% for photo in data %}
+                <div class="box">
+                    <img src="{{ photo.path }}" alt="{{ photo.title }}" class="img-responsive">
+                    <h2>{{ photo.title }}</h2>
+                    <p>{{ photo.description }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% if not data %}
+        <div style="color:#E7DFDD; text-align:center; font-size:25px;">
+            No photos uploaded. Upload <a href="/upload">here</a>.
+        </div>
+    {% endif %}
+{% endblock %}

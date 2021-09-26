@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Upload photo
+{% endblock %}
+
+{% block main %}
+    <div class="container form">
+        <form action="/upload" method="post" enctype="multipart/form-data" name="Form" onsubmit="return validate_form()">
+            <div class="form-group">
+                <input type="file" id="file_img" class="form-control-file" name="file" style="color:#E7DFDD;">
+            </div>
+            <div class="form-group">
+                <input type="text" autocomplete="off" name="title" placeholder="Title" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" autocomplete="off" name="description" placeholder="Description" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-h">Upload</button>
+        </form>
+    </div>
+    
+    <script>
+        function validate_form() {
+            var title = document.forms["Form"]["title"].value;
+            var file = document.forms["Form"]["file"].value;
+            
+            if (title == null || title == "" || file == null || file == "") {
+                alert("You must fill all the fields!");
+                return false;
+            }
+        }
+        
+        var fileInput = document.getElementById('file_img');
+        fileInput.onchange = () => {
+            const selectedFile = fileInput.files[0];
+            
+            var r = document.querySelector(':root');
+            var rs = getComputedStyle(r);
+            console.log(rs);
+            r.style.setProperty('--file', selectedFile.name);
+            console.log(selectedFile.name);
+        }
+    </script>
+{% endblock %}

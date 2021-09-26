@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <div class="container form">
+        <form action="/register" method="post" name="Form" onsubmit="return validate_form()">
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" autofocus autocomplete="off" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" autocomplete="off" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" name="confirmation" placeholder="Confirm Password" autocomplete="off" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-h">Register</button>
+        </form>
+    </div>
+    
+    <script>
+        function validate_form() {
+            var username = document.forms["Form"]["username"].value;
+            var password = document.forms["Form"]["password"].value;
+            var confirmation = document.forms["Form"]["confirmation"].value;
+            
+            if (password == null || password == "" || username == null || username == "" || confirmation == null || confirmation == "") {
+                alert("You must fill all the fields!");
+                return false;
+            }
+            if (password != confirmation) {
+                alert("Passwords don't match!");
+                return false;
+            }
+        }
+    </script>
+{% endblock %}
